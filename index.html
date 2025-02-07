@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Article</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        h3 {
+            color: #555;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        hr {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .toggle-btn, .highlight-btn {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-btn:hover, .highlight-btn:hover {
+            background-color: #333;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p><strong>Today's News</strong> <br> 05-10-2025 <br> Friday</p>
+    <hr>
+    <h1>SC finds things 'amiss' in the Kolkata rape-murder case</h1>
+    <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202408/66bc90e1c3709-kolkata-doctor-rape-murder-case-141128323-16x9.jpg?size=948:533" 
+         alt="Kolkata rape-murder case" onclick="showImageAlert()">
+    <hr>
+    <button class="toggle-btn" onclick="toggleSection('details')">Toggle Article Details</button>
+    <button class="highlight-btn" onclick="highlightKeywords()">Highlight Important Words</button>
+
+    <div id="details">
+        <h3>What</h3>
+        <p>The <span class="keyword">Supreme Court</span> on Monday voiced concern over the absence of a key document that was needed for the postmortem of the medic raped and murdered at the RG Kar Medical College in Calcutta.</p>
+        <h3>Protest Directives</h3>
+        <p>The top court also directed the protesting resident doctors in West Bengal to resume work by 5 pm on Tuesday and said no adverse action shall be taken against them on resumption of work.</p>
+        <h3>Privacy Protections</h3>
+        <p>It also wants the immediate removal of photographs of the victim from all social media platforms to protect the dignity and privacy of the deceased.</p>
+        <ul>
+            <li><h3>Missing Doc</h3>
+                <p>A bench headed by Chief Justice DY Chandrachud said there was no reference of the ‘challan’ (document) used, and sought an answer from the <span class="keyword">CBI</span> and the West Bengal government.</p>
+                <p>“Where is the challan of the body when it was handed over for postmortem?” the bench asked. Solicitor General Tushar Mehta, appearing for the <span class="keyword">CBI</span>, informed the bench that the challan was not part of their records. Senior advocate Kapil Sibal, appearing for the West Bengal government, told the bench that he could not find the document immediately and would get back to the court on this question.</p>
+            </li>
+            <li><h3>Other Lapses</h3>
+                <p>The court has flagged the at least a 14-hour delay by <span class="keyword">Kolkata Police</span> in registering FIR in rape and murder incident. It also directed the <span class="keyword">CBI</span> to submit a fresh report by September 17 on the probe in the case.</p>
+            </li>
+            <li><h3>Meanwhile</h3>
+                <p>West Bengal CM Mamata Banerjee during a press meet on Monday claimed that no one offered money to the parents of the victim. “Money wasn’t offered to the family. They were told if you want to do some good work in the memory of your daughter then tell us. One has to prove if money was offered,” said Mamata. September 9 marks one month of the RG Kar rape-murder.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section.style.display === "none" || section.style.display === "") {
+            section.style.display = "block";
+        } else {
+            section.style.display = "none";
+        }
+    }
+
+    function highlightKeywords() {
+        var keywords = document.querySelectorAll(".keyword");
+        keywords.forEach(function(word) {
+            word.classList.toggle("highlight");
+        });
+    }
+
+    function showImageAlert() {
+        alert("You clicked on the article image.");
+    }
+</script>
+</body>
+</html>
